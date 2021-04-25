@@ -111,3 +111,18 @@ while(exerciseList.length !== 0) {
 }
 randomExerciseList = array2;
 document.getElementById("randomList").innerHTML = randomExerciseList.slice(0, parseInt(numOfExercises));
+
+var timeLeft = 30;
+    var elem = document.getElementById('some_div');
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (timeLeft == -1) {
+        clearTimeout(timerId);
+        doSomething();
+      } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+      }
+    }
