@@ -109,10 +109,10 @@ while(exerciseList.length !== 0) {
     array2.push(exerciseList[randomIndex]);
     exerciseList.splice(randomIndex, 1);
 }
-randomExerciseList = array2;
+randomExerciseList  = array2;
 document.getElementById("randomList").innerHTML = randomExerciseList.slice(0, parseInt(numOfExercises));
-
-var timeLeft = 30;
+/*
+var timeLeft = parseInt(secondsPerExercise);
     var elem = document.getElementById('some_div');
     
     var timerId = setInterval(countdown, 1000);
@@ -125,4 +125,11 @@ var timeLeft = 30;
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
       }
-    }
+    } */
+    var i = 0;
+
+    setInterval(function() {            // setInterval makes it run repeatedly
+      document.getElementById('exercise')
+          .innerHTML = array2[i++];    // get the item and increment
+      if (i == array2.length) i = 0;   // reset to first element if you've reached the end
+  }, parseInt(secondsPerExercise * 1000));
