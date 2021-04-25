@@ -92,7 +92,7 @@ document.write("Number of Exercises is "+ numOfExercises);
 document.write("Time of Each Exercise " + secondsPerExercise);
 document.write("Rest Between Exercises is " + restBetweenExercises);
 */
-document.write("the answer is " + answer);
+//document.write("the answer is " + answer);
 
 /*
 function generateRandomList(exerciseList) {
@@ -103,5 +103,11 @@ function generateRandomList(exerciseList) {
     console.log(exerciseList);
 }
 */
-
-
+let array2 = [];
+while(exerciseList.length !== 0) {
+    let randomIndex=Math.floor(Math.random() * exerciseList.length);
+    array2.push(exerciseList[randomIndex]);
+    exerciseList.splice(randomIndex, 1);
+}
+randomExerciseList = array2;
+document.getElementById("randomList").innerHTML = randomExerciseList.slice(0, parseInt(numOfExercises));
